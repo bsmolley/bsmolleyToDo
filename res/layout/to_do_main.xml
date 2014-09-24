@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/todoMess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/todoAddBtn"
+        android:ems="10"
+        android:hint="@string/todoMess" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/todoAddBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Add to List" />
+
+    <ListView
+        android:id="@+id/todoList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/todoAddBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/todoDelBtn"
+        android:choiceMode="multipleChoice"  >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/todoDelBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Delete Selected" />
+
+    <Button
+        android:id="@+id/todoArcBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/todoList"
+        android:layout_alignParentLeft="true"
+        android:text="Archive Selected" />
+
+</RelativeLayout>
