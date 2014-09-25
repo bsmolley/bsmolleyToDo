@@ -126,7 +126,7 @@ public class ToDoActivity extends Fragment {
     public void addToDo(String text){
     	if (text.length() > 0){
     		theToDoList.add(text); 
-    		totalToDoItems += 1;
+    		//totalToDoItems += 1;
     	}
     	 	
     }
