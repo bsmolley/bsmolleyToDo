@@ -49,6 +49,7 @@ public class EmailActivity extends Fragment {
     	
     	// Compose the list that makes up the to do items
     	composeMailList(toDoList, archList);
+    	adapter.notifyDataSetChanged();
     	
     	selAll.setOnClickListener(new View.OnClickListener() {		
 			@Override
