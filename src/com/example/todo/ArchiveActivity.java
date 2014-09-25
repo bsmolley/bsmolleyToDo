@@ -61,16 +61,14 @@ public class ArchiveActivity extends Fragment{
 				
 				String toDo = (String) archList.getAdapter().getItem(position);
 				if (toDo.contains("[X] ")){
-					String newToDo = toDo.replace("[X] ", "");
+					String newToDo = toDo.replace("[X] ", "[  ] ");
 					theArchList.remove(position);
 					theArchList.add(position, newToDo);
-					//archChecked -= 1;
 				}
 				else{
-					String newToDo = "[X] "+ toDo;
+					String newToDo = toDo.replace("[  ] ", "[X] ");
 					theArchList.remove(position);
 					theArchList.add(position, newToDo);
-					//archChecked += 1;
 				}
 
 				adapter.notifyDataSetChanged();

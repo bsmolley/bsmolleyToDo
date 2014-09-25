@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Add to List" />
+        android:text="@string/todoAdd" />
 
     <ListView
         android:id="@+id/todoList"
@@ -36,23 +36,31 @@
         android:choiceMode="multipleChoice"  >
 
     </ListView>
-
+    
+	<View
+       android:id="@+id/fakeView2"
+       android:layout_width="0dp"
+       android:layout_height="0dp" 
+       android:layout_centerInParent="true"/>
+    
     <Button
         android:id="@+id/todoDelBtn"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/fakeView2"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="Delete Selected" />
+        android:text="@string/todoDelete" />
 
     <Button
         android:id="@+id/todoArcBtn"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/todoList"
+        android:layout_alignRight="@+id/fakeView2"
         android:layout_alignParentLeft="true"
-        android:text="Archive Selected" />
+        android:text="@string/todoArchive" />
 
 </RelativeLayout>

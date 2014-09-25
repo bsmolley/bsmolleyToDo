@@ -37,15 +37,31 @@
 
         <requestFocus />
     </EditText>
-
+    
+    <View
+       android:id="@+id/fakeView3"
+       android:layout_width="0dp"
+       android:layout_height="0dp" 
+       android:layout_centerInParent="true"/>
+      
     <Button
         android:id="@+id/emSelAllBtn"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/fakeView3"
+        android:text="@string/selAll" />
+
+    <Button
+        android:id="@+id/emUnselAll"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fakeView3"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/selAll" />
+        android:text="@string/emUnselAll" />
 
 </RelativeLayout>

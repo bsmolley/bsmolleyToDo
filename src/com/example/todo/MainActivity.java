@@ -122,7 +122,7 @@ public class MainActivity extends FragmentActivity implements
 			//fragment.setArguments(args);
 			Fragment fragment;
 			Bundle args = new Bundle();
-			
+			// Used code from http://stackoverflow.com/questions/18413309/how-to-implement-a-viewpager-with-different-fragments-layouts Sept 17, 2014
 			switch (position){
 			case 0:
 				fragment = new ToDoActivity();

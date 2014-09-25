@@ -34,6 +34,7 @@ public class ToDoActivity extends Fragment {
 		super.onCreate(savedInstanceState);
 	}
 	
+	// Used code from http://www.cs.dartmouth.edu/~campbell/cs65/lecture08/lecture08.html Sept 17, 2014
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -49,7 +50,9 @@ public class ToDoActivity extends Fragment {
     	toDoList = (ListView) todoView.findViewById(R.id.todoList);
     	
         // Set up and adapter for use with our list 
-    	//theList.add("Victory!!!!");
+    	// Used list adapter code from http://sunil-android.blogspot.ca/2013/08/actionbar-tab-listfragment-in-android.html Sept 16, 2014
+    	// Used code from http://stackoverflow.com/questions/15547997/android-listview-in-fragment-layout Sept 19, 2014
+    	// Used code from http://www.androprogrammer.com/2014/03/create-android-dynamic-view-with.html Sept 19, 2014
     	adapter = new ArrayAdapter<String>(getActivity(), 
 				android.R.layout.simple_list_item_multiple_choice, theToDoList);
     	toDoList.setAdapter(adapter);
@@ -64,13 +67,13 @@ public class ToDoActivity extends Fragment {
 				
 				String toDo = (String) toDoList.getAdapter().getItem(position);
 				if (toDo.contains("[X] ")){
-					String newToDo = toDo.replace("[X] ", "");
+					String newToDo = toDo.replace("[X] ", "[  ] ");
 					theToDoList.remove(position);
 					theToDoList.add(position, newToDo);
 					//toDoChecked -= 1;
 				}
 				else{
-					String newToDo = "[X] "+ toDo;
+					String newToDo = toDo.replace("[  ] ", "[X] ");
 					theToDoList.remove(position);
 					theToDoList.add(position, newToDo);
 					//toDoChecked += 1;
@@ -83,16 +86,18 @@ public class ToDoActivity extends Fragment {
     		
     	});
     	
+    	// Used code from http://stackoverflow.com/questions/5972306/set-temporary-text-in-a-edittext-textview-in-android Sept 18, 2014
     	addBtn.setOnClickListener(new View.OnClickListener() {		
 			@Override
 			public void onClick(View v) {
-				String input = toDoItem.getText().toString();
+				String input = "[  ] " + toDoItem.getText().toString();
 				addToDo(input);
 				toDoItem.setText(null); // Resets the text field after message is entered
 				adapter.notifyDataSetChanged();			
 			}
 		});
     	
+    	// Used code from http://theopentutorials.com/tutorials/android/listview/android-multiple-selection-listview/ Sept 20, 2014
     	delBtn.setOnClickListener(new View.OnClickListener() {		
 			@Override
 			public void onClick(View v) {
@@ -117,6 +122,7 @@ public class ToDoActivity extends Fragment {
     	return todoView;
     }
     
+	// Used code from http://stackoverflow.com/questions/16981501/android-listview-with-edittext-and-textview Sept 17, 2014
     public void addToDo(String text){
     	if (text.length() > 0){
     		theToDoList.add(text); 
@@ -125,6 +131,7 @@ public class ToDoActivity extends Fragment {
     	 	
     }
     
+    // Used code from http://wptrafficanalyzer.in/blog/deleting-selected-items-from-listview-in-android/ Sept 16, 2014
     public void delToDo(SparseBooleanArray array, ArrayAdapter<String> adapter, int size){
 		for(int i = size - 1; i >= 0; i--){
             if(array.get(i)){
@@ -135,6 +142,7 @@ public class ToDoActivity extends Fragment {
 		array.clear();
     }
     
+ // Used code from http://stackoverflow.com/questions/4540754/dynamically-add-elements-to-a-listview-android Sept 20, 2014
     public static void grabArchItems(SparseBooleanArray array, ArrayList<String> archList, int size){ 	
 		for(int i = size - 1; i >= 0; i--){
             if(array.get(i)){

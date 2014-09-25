@@ -9,9 +9,16 @@
     <string name="title_section4">History</string>
     
     <string name="todoMess"><i>To Do Item</i></string>
+    <string name="todoAdd">Add to List</string>
+    <string name="todoArchive">Archive Selected</string>
+    <string name="todoDelete">Delete Selected</string>
+    
+    <string name="archUnarchive">Unarchive</string>
+    <string name="archDelete">Delete</string>
     
     <string name="selAll">Select All</string>
     <string name="emSel">Email Selected</string>
+    <string name="emUnselAll">Unselect All</string>
     <string name="emailAddress"><i>Enter Email Address</i></string>
     
     <string name="histTotalToDo">Total To Do List Items:</string>
