@@ -90,7 +90,7 @@ public class ToDoActivity extends Fragment {
     	addBtn.setOnClickListener(new View.OnClickListener() {		
 			@Override
 			public void onClick(View v) {
-				String input = "[  ] " + toDoItem.getText().toString();
+				String input = toDoItem.getText().toString();
 				addToDo(input);
 				toDoItem.setText(null); // Resets the text field after message is entered
 				adapter.notifyDataSetChanged();			
@@ -125,7 +125,7 @@ public class ToDoActivity extends Fragment {
 	// Used code from http://stackoverflow.com/questions/16981501/android-listview-with-edittext-and-textview Sept 17, 2014
     public void addToDo(String text){
     	if (text.length() > 0){
-    		theToDoList.add(text); 
+    		theToDoList.add("[  ] " + text); 
     		//totalToDoItems += 1;
     	}
     	 	
